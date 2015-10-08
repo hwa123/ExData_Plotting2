@@ -15,17 +15,17 @@ print(ggplot(subset, aes(year, TotalEmissions, color = type)) +
   labs(title = "Total Emissions from 1999 to 2008 in Baltimore City", 
        x = "Year", y = expression('Total PM'[2.5]*" Emission")))
 
-subset<- NEI[NEI$fips == "24510",]
+#subset<- NEI[NEI$fips == "24510",]
 
-library(ggplot2)
-par("mar" = c(5,4,4,2) + 0.1)
-png(filename = "./figure/plot3.png",
-    width = 480, height = 480,
-    units = "px")
-g <- ggplot(subset, aes(year,Emissions, color = type))
+#library(ggplot2)
+#par("mar" = c(5,4,4,2) + 0.1)
+#png(filename = "./figure/plot3.png",
+#    width = 480, height = 480,
+#    units = "px")
+#g <- ggplot(subset, aes(year,Emissions, color = type))
 
-print(g + geom_line(stat = "summary", fun.y = "sum") + 
-  ylab(expression('Total PM'[2.5]*" Emission")) + 
-  ggtitle("Total Emissions from 1999 to 2008 in Baltimore City"))
+#print(g + geom_line(stat = "summary", fun.y = "sum") + 
+#  ylab(expression('Total PM'[2.5]*" Emission")) + 
+#  ggtitle("Total Emissions from 1999 to 2008 in Baltimore City"))
 
 dev.off()
